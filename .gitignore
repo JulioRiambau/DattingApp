@@ -6,7 +6,7 @@ bin/
 obj/
 
 # Ignore Visual Studio 2019 directory
-.vs2019/
+.vs/
 
 # Ignore Rider directory
 .idea/
