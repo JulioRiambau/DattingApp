@@ -1,0 +1,16 @@
+<h4>Internal server error - refresh will make page disapear</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weigh-bold">Note: if you are seeeing this then angular is probably not to blame.</p>
+    <p>What to do next?</p>
+    <ol>
+        <li>Open chrome dev tools then check failing request on networks tab</li>
+        <li>check the request URL</li>
+        <li>Reproduce the problem in Postman</li>
+    </ol>
+
+    <p class="font-weigh-bold">Following is the stack trace:</p>
+    <code class="mt-5" style="background-color: whitesmoke;">
+        {{error.details}}
+    </code>
+</ng-container>
