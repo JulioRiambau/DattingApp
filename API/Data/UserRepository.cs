@@ -47,14 +47,14 @@ namespace API.Data
             return await _context.Users.FindAsync(id);
         }
 
-        public async Task<AppUser> GetUserByUserName(string username)
+        public async Task<AppUser> GetUserByUserNameAsync(string username)
         {   
             return await _context.Users
                 .Include(p => p.Photos)
                 .FirstOrDefaultAsync(x => x.UserName == username);
         }
 
-        public async Task<MemberDto> GetMemberByUserName(string username)
+        public async Task<MemberDto> GetMemberByUserNameAsync(string username)
         {
             return await _context.Users
                 .Where(x => x.UserName == username)
