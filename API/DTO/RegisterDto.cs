@@ -1,14 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace API.DTO
-{
-    public class RegisterDto
-    {
-        [Required]
-        public string UserName { get; set; }
+namespace API.DTOs;
 
-        [Required]
-        [StringLength(8, ErrorMessage = "Password cannot exceed 8 characters", MinimumLength = 6)]
-        public string Password { get; set; }
-    }
+public class RegisterDto
+{
+    [Required] public string UserName { get; set; }
+
+    [Required] public string KnownAs { get; set; }
+    [Required] public string Gender { get; set; }
+
+    [Required] public DateOnly? DateOfBirth { get; set; } // Note this must be optional or the required validator will not work
+    [Required] public string City { get; set; }
+    [Required] public string Country { get; set; }
+
+    [Required]
+    [StringLength(8, MinimumLength = 4)]
+    public string Password { get; set; }
 }
