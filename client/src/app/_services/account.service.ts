@@ -19,6 +19,7 @@ export class AccountService {
       map((response: User) => {
         const user = response;
         if (user) {
+          console.log("account service login user: "+user.gender)
           this.setCurrentUser(user);
         }
       })
