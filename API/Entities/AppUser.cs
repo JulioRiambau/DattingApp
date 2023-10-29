@@ -8,7 +8,7 @@ namespace API.Entities
         public int Id { get; set; }
 
         [Required]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         public byte[] PasswordHash { get; set; }
 
@@ -38,6 +38,9 @@ namespace API.Entities
 
         public List<UserLike> LikedByUsers { get; set; }
         public List<UserLike> LikedUsers { get; set; }
+
+        public List<Message> MessagesSent { get; set; }
+        public List<Message> MessagesReceived { get; set; }
     }
 
    
